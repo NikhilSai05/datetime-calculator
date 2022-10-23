@@ -40,7 +40,7 @@ Your code will be graded on whether it correctly implements the specified algori
 
 Run through the **assignment 1 setup instructions**, but for this `datetime-calculator` repository instead of the assignment 1 `calculator` repository.
 
-To submit your work, push your code to your `datetime-calculator` fork on GitLab and submit your writeup to the Canvas assignment page.
+To submit your work on the project, push your code to your `datetime-calculator` fork on GitLab.
 
 ## Calculator input formats
 
