@@ -22,9 +22,9 @@ We will be working with the `js-joda` library.
 
 We will also be using TypeScript arrays, which you can find documentation for on the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
 
-## Assignment requirements
+## Requirements
 
-You must edit only the `src/Calculator.ts` and `src/Calculator.test.ts` files. (Imagine the other files are owned by a different team in your organization.)
+You must edit only the `src/Calculator.ts` and `src/Calculator.test.ts` files. (Imagine the other files are owned by a different team in your organization.) You are not required to edit the `src/Calculator.test.ts` file.
 
 Your code must compile with no errors **or warnings** in the files that you've edited. This includes ESLint warnings.
 
