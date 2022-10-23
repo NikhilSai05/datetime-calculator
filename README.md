@@ -1,19 +1,16 @@
 # Date & Time Calculator
 
 This is a project template for a simple calculator with three date/time-related features:
-  - calculating the number of days between two dates
-  - calculating the date some multiplied interval after a start date
-  - calculating all recurring event dates and times between two dates
+
+- calculating the number of days between two dates
+- calculating the date some multiplied interval after a start date
+- calculating all recurring event dates and times between two dates
 
 The UI code is already set up; you will be implementing all of the algorithmic code for the calculator.
 
-## Assignment goals
+## Project goals
 
-This assignment has two high-level goals:
-  - You will practice working with a *linter* configured with settings that may not be your own preference.
-  - You will practice working with a *third-party library* that you are not already familiar with.
-
-If you work effectively on this project, you will spend much more of your time **reading documentation** than **writing code**.
+The high-level goal of this project is to practice working with a _third-party library_ that you are not already familiar with. If you work effectively on this project, you will spend much more of your time **reading documentation** than **writing code**.
 
 ## Library information
 
@@ -23,35 +20,27 @@ We will be working with the `js-joda` library.
 
 [Manual](https://js-joda.github.io/js-joda/manual/usage.html)
 
-We will also be using TypeScript arrays in one function, which you can find documentation for on the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
+We will also be using TypeScript arrays, which you can find documentation for on the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
 
 ## Assignment requirements
 
 You must edit only the `src/Calculator.ts` and `src/Calculator.test.ts` files. (Imagine the other files are owned by a different team in your organization.)
 
-Your code must compile with no errors **or warnings** in the files that you've edited. This includes ESLint warnings. We will cover in lecture how to use ESLint.
+Your code must compile with no errors **or warnings** in the files that you've edited. This includes ESLint warnings.
 
 All of your code must be your own individual work. If you want to help other students, don't share your code with them, help them read and understand the documentation so they can write their own code.
 
-You are not required to write your own automated tests in `src/Calculator.test.ts`, but you still should! It will be very tedious to test your code by hand, and if you're not doing **any** testing, you will probably get some details of the algorithms wrong.
-
-**Along with your code, you must submit a short (1-3 page) writeup.** Your writeup should identify which parts of the `js-joda` documentation were most important to your work and give a brief beginner-friendly summary of each of these parts of the documentation.
+You are not required to write your own automated tests in `src/Calculator.test.ts`, but you're encouraged to.
 
 ## Grading
 
-You will be graded on whether your code correctly implements the specified algorithms and meets the above requirements. You will lose points for ESLint warnings, but other than that code style will not be graded.
+Your code will be graded on whether it correctly implements the specified algorithms and meets the above requirements. You will lose points for ESLint warnings and errors.
 
 ## Setup
 
-If you're working on Windows, run this Git command in a terminal before you start working on this project:
+Run through the **assignment 1 setup instructions**, but for this `datetime-calculator` repository instead of the assignment 1 `calculator` repository.
 
-```
-git config --global core.autocrlf false
-```
-
-Run through the assignment 1 setup instructions, but for this `datetime-calculator` repository instead of the assignment 1 `calculator` repository.
-
-To submit your work, push your code to your `datetime-calculator` fork on GitLab and submit your writeup to the Canvas assignment dropbox.
+To submit your work, push your code to your `datetime-calculator` fork on GitLab and submit your writeup to the Canvas assignment page.
 
 ## Calculator input formats
 
@@ -79,6 +68,7 @@ The arguments `start` and `end` are both dates (not date/times). The return valu
 If `start` is a date that comes after `end`, then the result should be negative.
 
 Examples:
+
 ```
 start = 2022-01-31
 end = 2022-01-31
@@ -108,6 +98,7 @@ This is the default behavior of `js-joda` when adding a period value to a date v
 When adding complex periods that involve multiple units (such as `P1Y1M` or "one year and one month"), we will handle the units in order of **largest to smallest**: so adding `P1Y1M` to a date is equivalent to adding `P1Y` and then adding `P1M`, not the other way around. Again, this is the default behavior of our library, so you won't have to implement this behavior yourself.
 
 Examples:
+
 ```
 start = 2022-01-31
 interval = P1D
@@ -134,11 +125,12 @@ return value = 2020-02-29
 
 The `start` and `end` arguments are date/times (not just dates), the `interval` argument is a period (an amount of days), and the `timeOfDay` argument is a time (not a date/time).
 
-The return value should be an *array* of all date/times on which the recurring event should take place: the event will take place once per `interval` at `timeOfDay`. If the `start` time is **earlier in the day** than `timeOfDay`, the first event should take place on the `start` date; otherwise, the first event should take place **exactly** one `interval` after the `start` date. Similarly, if the `end` time is **later in the day** than `timeOfDay` and the last `interval` ends exactly on the `end` date, the last event should take place on the `end` date; otherwise, the last event should take place **at most** one `interval` before the `end` date. In all cases, the time component of every element in the output array should be equal to `timeOfDay`.
+The return value should be an _array_ of all date/times on which the recurring event should take place: the event will take place once per `interval` at `timeOfDay`. If the `start` time is **earlier in the day** than `timeOfDay`, the first event should take place on the `start` date; otherwise, the first event should take place **exactly** one `interval` after the `start` date. Similarly, if the `end` time is **later in the day** than `timeOfDay` and the last `interval` ends exactly on the `end` date, the last event should take place on the `end` date; otherwise, the last event should take place **at most** one `interval` before the `end` date. In all cases, the time component of every element in the output array should be equal to `timeOfDay`.
 
 This is a complex specification, but if you read it carefully you'll find it describes a fairly intuitive way for a function like this to behave. Make sure to test your code thoroughly!
 
 Examples:
+
 ```
 start = 2022-01-01T00:00
 end = 2022-01-04T23:59

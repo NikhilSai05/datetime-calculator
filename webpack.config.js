@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserWebpackPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -28,4 +29,35 @@ module.exports = {
       }
     ),
   ],
+  optimization: {
+    minimize: false,
+    minimizer: [
+      new TerserWebpackPlugin({
+        extractComments: false,
+        terserOptions: {
+          mangle: false,
+          compress: {
+            booleans: false,
+            collapse_vars: false,
+            conditionals: false,
+            dead_code: false,
+            evaluate: false,
+            hoist_props: false,
+            if_return: false,
+            inline: false,
+            join_vars: false,
+            loops: false,
+            reduce_funcs: false,
+            reduce_vars: false,
+            side_effects: false,
+            switches: false,
+            unused: false,
+          },
+          format: {
+            comments: false,
+          },
+        },
+      }),
+    ],
+  },
 };
